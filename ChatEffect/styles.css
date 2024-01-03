@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+}
+
+.person-container {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.person-container.message-enter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chat {
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: antiquewhite;
+}
+
+.person-container {
+    background-color: cyan;
+    margin-bottom: 0.3rem;
+    transition: background-color 0.5s ease-out;
+    padding: 0.7rem;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.left-container {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.avatar-img {
+    cursor: pointer;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: hsl(0, 0%, 22%);
+    margin-right: 2rem;
+}
+
+.center-container {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pseudo-header {
+    width: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.message-para {
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
