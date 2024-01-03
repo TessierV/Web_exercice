@@ -1,13 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 * {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
+:root{
+    /*Colors*/
+    --colors1: #E9EAF0;
+    --colors2: #F5F5F5;
+    --colors3: #16171A;
+
+    /*background chat*/
+    --background-color_chat: var(--colors1);
+    --height_chat: 500px;
+
+    /*Person Container*/
+    --background-color_personcontainer: var(--colors2);
+    --padding_medium : 1rem;
+    --padding_large: 2rem 4rem;
+    --shadowbox: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+    /* Border Radius*/
+    --BorderRadius_rond: 50px;
+    --BorderRadius_rect: 5px;
+}
+
 
 .person-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     opacity: 0;
     transform: translateY(100%);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    cursor: pointer;
+    color: var(--colors3);
 }
 
 .person-container.message-enter {
@@ -16,18 +43,18 @@
 }
 
 .chat {
-    max-height: 500px;
+    height: var(--height_chat);
     overflow-y: auto;
-    background-color: antiquewhite;
+    background-color: var(--background-color_chat);
 }
 
 .person-container {
-    background-color: cyan;
-    margin-bottom: 0.3rem;
+    background-color: var(--background-color_personcontainer);
     transition: background-color 0.5s ease-out;
-    padding: 0.7rem;
-    border-radius: 5px;
-    width: 90%;
+    border-radius: var(--BorderRadius_rect);
+    box-shadow: var(--shadowbox);
+    padding: var(--padding_medium);
+    margin: var(--padding_large);
 }
 
 .left-container {
@@ -37,26 +64,38 @@
 
 .avatar-img {
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: var(--BorderRadius_rect);
     width: 80px;
     height: 80px;
-    background-color: hsl(0, 0%, 22%);
-    margin-right: 2rem;
+    margin: var(--padding_medium);
 }
 
 .center-container {
     display: inline-block;
     vertical-align: top;
+    margin: var(--padding_medium);
 }
 
-.pseudo-header {
-    width: 100px;
-    position: relative;
-    cursor: pointer;
-}
-
-.message-para {
-    &:not(:last-child) {
-        margin-bottom: 10px;
+@media only screen and (max-width: 600px) {
+    :root{
+        --padding_medium : 0.5rem 1rem;
+        --padding_large: 1rem 2rem;
     }
+    .person-container {
+        text-align: left;
+        font-size: small;
+    }
+
+    .left-container {
+        margin-bottom: var(--padding_medium);
+    }
+
+    .center-container {
+        margin: 0.5rem;
+    }
+    .avatar-img {
+        width: 30px;
+        height: 30px;
+    }
+
 }
