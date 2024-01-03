@@ -16,7 +16,6 @@
     --colors2: #282828;
     --colors3: #E9EAF0;*/
 
-
     /*background chat*/
     --background-color_chat: var(--colors1);
     --height_chat: 500px;
@@ -30,6 +29,17 @@
     /* Border Radius*/
     --BorderRadius_rond: 50px;
     --BorderRadius_rect: 5px;
+}
+
+/*Not REQUIRE*/
+#resume{
+    width: 60%;
+    margin: 4rem auto;
+}
+
+/*Not REQUIRE*/
+#resume h1{
+    font-size: 5vmax;
 }
 
 .person-container {

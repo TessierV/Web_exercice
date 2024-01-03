@@ -32,6 +32,17 @@
     --BorderRadius_rect: 5px;
 }
 
+/*Not REQUIRE*/
+#resume{
+    width: 60%;
+    margin: 4rem auto;
+}
+
+/*Not REQUIRE*/
+#resume h1{
+    font-size: 5vmax;
+}
+
 .person-container {
     display: flex;
     align-items: flex-start;
