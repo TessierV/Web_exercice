@@ -54,17 +54,14 @@
 }
 
 .person-container {
-    background-color: var(--background-color_personcontainer);
     transition: background-color 0.5s ease-out;
-    border-radius: var(--BorderRadius_rect);
-    box-shadow: var(--shadowbox);
-    padding: var(--padding_medium);
     margin: var(--padding_large);
 }
 
 .left-container {
     display: inline-block;
     vertical-align: top;
+
 }
 
 .avatar-img {
@@ -73,12 +70,18 @@
     width: 80px;
     height: 80px;
     margin: var(--padding_medium);
+    box-shadow: var(--shadowbox);
 }
 
 .center-container {
     display: inline-block;
     vertical-align: top;
     margin: var(--padding_medium);
+    padding: var(--padding_medium);
+    background-color: var(--background-color_personcontainer);
+    transition: background-color 0.5s ease-out;
+    border-radius: var(--BorderRadius_rect);
+    box-shadow: var(--shadowbox);
 }
 
 @media only screen and (max-width: 600px) {
