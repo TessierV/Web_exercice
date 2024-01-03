@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             container.style.transition = 'opacity 0.5s ease-out, max-height 0.5s ease-out, transform 0.5s ease-out';
             container.style.opacity = 1;
-            container.style.maxHeight = '200px';
             container.style.transform = 'translateX(0px) scale(1)';
         }, delay);
 
@@ -49,7 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const avatarImg = document.createElement("img");
         avatarImg.classList.add("avatar-img");
         avatarImg.src = person.avatar || getRandomAvatar();
+        avatarImg.addEventListener('error', function() {
+            avatarImg.src = 'assets/img/default-avatar.png';
+        });
+
         leftContainer.appendChild(avatarImg);
+
+
+
 
         const centerContainer = document.createElement("div");
         centerContainer.classList.add("center-container");
@@ -74,16 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const personnes = [
-        { name: "John", message: "Hello there!" },
+        { name: "John", message: "Lorem 🥳🥳🥳", avatar:'assets/img/image_test.png'  },
         { name: "Alice", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis." },
         { name: "Bob", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id fermentum justo, eu fermentum felis. Nulla facilisi. Proin ut magna vitae purus tincidunt congue non vel elit. Etiam vitae neque id augue vulputate sagittis." },
-        { name: "Eva", message: "Hello everyone!" },
-        { name: "Charlie", message: "Hey, what's up?" },
-        { name: "Grace", message: "Hi, it's Grace!" },
-        { name: "Daniel", message: "Hello from Daniel!" },
-        { name: "Sophie", message: "Hey there, Sophie here!" },
-        { name: "Alex", message: "Hi, Alex in the chat!" },
-        { name: "Olivia", message: "Greetings from Olivia!" },
+        { name: "Eva", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis beatae dolor eaque recusandae alias voluptas, provident optio error voluptates voluptatem?" },
+        { name: "Charlie", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem error architecto nesciunt natus similique." },
+        { name: "Grace", message: "Lorem ipsum dolor sit amet" },
+        { name: "Daniel", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis beatae dolor eaque recusandae alias voluptas, provident optio error voluptates voluptatem?" },
+        { name: "Sophie", message: "Lorem ipsum" },
+        { name: "Alex", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aut, quas quod molestias dolore doloremque est facilis non optio blanditiis mollitia accusamus. Deserunt aliquid optio suscipit ipsa, dolor non beatae et sapiente dolores dolorem dicta architecto eveniet dolore eum fuga." },
+        { name: "Olivia", message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quisquam ducimus provident non incidunt eaque, esse sapiente unde possimus reiciendis nesciunt soluta iure porro sint cumque repellat, libero cupiditate illum."},
     ];
 
     let index = 0;
@@ -95,6 +101,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(displayPeople, 0);
 
-    chatSection.style.maxHeight = "500px";
     chatSection.style.overflowY = "auto";
 });
