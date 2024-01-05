@@ -2,16 +2,19 @@
 
 *{
     margin: 0;
-    color: #413E3C;
-    background-color: #EEEFF4;
+    background-color: var(--light-color);
 }
 
 :root{
-
+    --padding: 0 5px;
+    --dark-color: #413E3C;
+    --light-color: #EEEFF4;
+    --border: 1px solid var(--dark-color);
 }
 
 body{
     padding: 5% 10%;
+    color: var(--dark-color);
 }
 
 
@@ -24,9 +27,7 @@ h1, h2{
 h1{
     font-size: 5vmax;
     letter-spacing: -2px;
-    margin-bottom: 2%;
     text-transform: uppercase;
-
 }
 h2{
     font-weight: 400;
@@ -40,58 +41,36 @@ h3{
 
 .separator{
     height: 5px;
-    border-top: #413E3C 2px solid;
-    border-bottom: #413E3C 2px solid;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    margin-bottom: 3%;
 }
 
 p, label,button, input{
     font-family: 'Poppins', sans-serif;
-    font-size: large;
+    font-size: 12px;
 }
 
 #selection-container{
     display: flex;
     justify-content: space-between;
-    padding: 2% 0 5px 0;
+    align-items: center;
+    padding-bottom: 5px;
     margin-bottom: 2%;
-    border-bottom: 2px solid #413E3C;
+    border-bottom: var(--border);
 }
 
-.quote{
-    padding: 5%;
-    border: 1px solid #413E3C;
-    text-align: center;
+#custom-file-button{
+    border: var(--border);
+    padding: 5px 10px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* #color-palette {
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin-top: 2%;
+#custom-file-button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
-
-.color-circle {
-    display: inline-flex;
-    width: 30px;
-    height: 30px;
-    margin-left: 1%;
-}
-
-.color-info {
-    left: 0;
-    display: none;
-}
-
-.color-circle:hover .color-info {
-    display: block;
-} */
-
-
-/*#color-palette-heading{
-    font-weight: bolder;
-    justify-content: center;
-
-}*/
 
 #image-container img {
     width: calc(100%);
@@ -100,11 +79,64 @@ p, label,button, input{
     margin: 0 auto;
 }
 
+/**/
 
-#color-palette {
-    margin-top: 5px;
+#color-controls {
+    display: flex;
+    align-items: center;
+}
+
+#color-count {
     text-align: center;
-    padding: 5px 0;
+}
+
+#increment-button,
+#decrement-button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+#control-container{
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+#control-container input{
+    border: none;
+    border-left: var(--border);
+    border-right: var(--border);
+}
+
+#color-count::-webkit-inner-spin-button,
+#color-count::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#button-submit{
+    background-color: #413E3C;
+    color: #EEEFF4;
+    border: var(--border);
+    padding: 5px 10px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#button-submit:hover{
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/**/
+
+.quote{
+    padding: 5%;
+    max-height: 500px;
+    border: var(--border);
+    text-align: center;
 }
 
 #color-palette-container {
@@ -114,36 +146,87 @@ p, label,button, input{
 }
 
 .color-circle {
-    margin-right: 5px;
     width: calc(100% - 5px);
-    height: 40px;
-
+    height: 30px;
+    margin-right: 5px;
 }
 
 .color-circle:last-child {
     margin-right: 0;
 }
 
-
-.color-info {
-    left: 0;
-    display: none;
+.color-circle .color-info {
+    opacity: 0;
+    height: 0;
+    transition: height 0.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 
 .color-circle:hover .color-info {
     display: block;
+    opacity: 1;
+    height: 20px;
+    transition: height 0.5s ease-in-out, opacity 1.5s ease-in-out;
+    border-bottom: var(--border);
 }
 
-input[type='file']{
-    background-color: none;
-}
+@media screen and (max-width: 1065px) {
+    #image-container img  {
+        max-height: 350px;
+    }
+  }
 
-/* Styles pour le bouton "Choisir une image" */
-#image-input {
-    background-color: red; /* Fond rouge */
-    color: white; /* Texte blanc */
-    font-weight: bold; /* Texte en gras */
-    padding: 10px; /* Ajoutez un espace autour du texte */
-    border: none; /* Supprimez la bordure par défaut du bouton */
-    cursor: pointer; /* Curseur de la main pour indiquer que le bouton est cliquable */
-}
+  @media screen and (min-width: 711px) {
+
+    .button-submit-reduct {
+        display: none;
+    }
+
+  }
+
+  @media screen and (max-width: 710px) {
+    body  {
+        padding: 2%;
+    }
+    p, label,button, input{
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+    }
+    .button-submit-reduct {
+        text-align: center;
+        margin: 5px 0;
+        background-color: var(--dark-color);
+        color: var(--light-color);
+        width: 100%;
+    }
+    .button-submit-reduct:hover {
+        background-color: var(--light-color);
+        color: var(--dark-color);
+    }
+    .button-submit-inreduct{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 401px) {
+    body  {
+        padding: 1%;
+    }
+    :root{
+        --padding: 0;
+    }
+    h1, h3{
+        font-size: 3vmax;
+    }
+    #selection-container{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+        margin-bottom: 2%;
+        border-bottom: var(--border);
+    }
+    #custom-file-button{
+        margin-bottom: 2%;
+    }
+  }
