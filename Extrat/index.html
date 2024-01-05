@@ -14,16 +14,16 @@
     <h1>Extract Colors</h1>
     <div class="separator"></div>
     <div id="selection-container">
-        <div>
-            <input type="file" id="image-input" accept="image/*" style="display: none;">
-        <label for="image-input" id="custom-file-button">Choisir une image  »</label>
-        </div>
-
-        <div>
+        <input type="file" id="image-input" accept="image/*" style="display: none;">
+        <label for="image-input" id="custom-file-button">Choisir une image »</label>
+        <div id="color-controls">
             <label for="color-count">Nombre de couleurs à extraire :</label>
-            <input type="number" id="color-count" min="1" max="20" value="4">
-
-            <button onclick="handleImage()">COLOR Palette »</button>
+            <div id="control-container">
+                <button id="decrement-button" onclick="adjustColorCount(-1)">-</button>
+                <input type="number" id="color-count" min="2" max="20" value="4">
+                <button id="increment-button" onclick="adjustColorCount(1)">+</button>
+            </div>
+            <button class="button-submit-inreduct" id="button-submit" onclick="handleImage()">COLOR Palette »</button>
         </div>
     </div>
     <div id="image-container">
@@ -32,8 +32,7 @@
     <div id="color-palette">
         <div id="color-palette-container"></div>
     </div>
-
-
+    <button class="button-submit-reduct" id="button-submit" onclick="handleImage()">COLOR Palette »</button>
     <script>
         function handleImage() {
             const fileInput = document.getElementById('image-input');
@@ -110,6 +109,15 @@
             document.execCommand('copy');
             document.body.removeChild(textArea);
             alert('Valeur web de la couleur copiée : ' + text);
+        }
+        function adjustColorCount(amount) {
+            const colorCountInput = document.getElementById('color-count');
+            let currentCount = parseInt(colorCountInput.value);
+            currentCount += amount;
+
+            if (currentCount >= parseInt(colorCountInput.min) && currentCount <= parseInt(colorCountInput.max)) {
+                colorCountInput.value = currentCount;
+            }
         }
     </script>
 </body>
