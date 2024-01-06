@@ -38,7 +38,7 @@
 
 1. Clone the repository to your local machine.
 ```bash
-git clone https://github.com/TessierV/Web_exercice.git && cd PicColor  
+git clone https://github.com/TessierV/Web_exercice.git && cd ChatEffect  
 ```  
 
 
