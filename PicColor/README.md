@@ -29,7 +29,7 @@ ColorPalette Extractor is a web-based tool that allows users to upload an image 
 
 1. Clone the repository to your local machine.
 ```bash
-git clone https://github.com/TessierV/Web_exercice.git && cd Web_exercice  
+git clone https://github.com/TessierV/Web_exercice.git && cd PicColor  
 ```  
 
 <br/><hr>
