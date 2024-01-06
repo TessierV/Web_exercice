@@ -1,81 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:wght@300&family=Poppins:wght@200;300&display=swap');
 
-*{
+* {
     margin: 0;
     background-color: var(--light-color);
 }
 
-:root{
+:root {
     --padding: 0 5px;
     --dark-color: #413E3C;
     --light-color: #EEEFF4;
     --border: 1px solid var(--dark-color);
+    --transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    --max-height: 500px;
+
+    --body-padding: 5% 10%;
+    --margin-bottom: 2%;
+
+    --fontsize-title: 5vmax;
+    --fontsize-content: 14px;
+
+    /*Change the format picture for contain instead of cover*/
+    --object-fit: cover;
 }
 
-body{
-    padding: 5% 10%;
+body {
+    padding: var(--body-padding);
     color: var(--dark-color);
 }
 
 
-h1, h2{
+h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 100;
 
 
 }
-h1{
-    font-size: 5vmax;
+
+h1 {
+    font-size: var(--fontsize-title);
     letter-spacing: -2px;
     text-transform: uppercase;
 }
-h2{
-    font-weight: 400;
-}
 
-h3{
+h3 {
     font-family: 'Corinthia', cursive;
-    font-size: 5vmax;
+    font-size: var(--fontsize-title);
     font-weight: 100;
 }
 
-.separator{
+.separator {
     height: 5px;
     border-top: var(--border);
     border-bottom: var(--border);
-    margin-bottom: 3%;
+    margin-bottom: var(--margin-bottom);
 }
 
-p, label,button, input{
+p,
+label,
+button,
+input {
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: var(--fontsize-content);
 }
 
-#selection-container{
+#selection-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 5px;
-    margin-bottom: 2%;
+    margin-bottom: var(--margin-bottom);
     border-bottom: var(--border);
 }
 
-#custom-file-button{
+#custom-file-button {
     border: var(--border);
     padding: 5px 10px;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
-#custom-file-button:hover{
+#custom-file-button:hover {
     background-color: var(--dark-color);
     color: var(--light-color);
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
 #image-container img {
     width: calc(100%);
-    max-height: 500px;
-    object-fit: contain;
+    max-height: var(--max-height);
+    object-fit: var(--object-fit);
     margin: 0 auto;
 }
 
@@ -95,17 +107,17 @@ p, label,button, input{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: var(--fontsize-content);
     cursor: pointer;
     border: none;
 }
 
-#control-container{
+#control-container {
     margin: 0 5px;
     padding: 0 5px;
 }
 
-#control-container input{
+#control-container input {
     border: none;
     border-left: var(--border);
     border-right: var(--border);
@@ -116,25 +128,32 @@ p, label,button, input{
     -webkit-appearance: none;
 }
 
-#button-submit{
-    background-color: #413E3C;
-    color: #EEEFF4;
+#button-submit,
+.button-submit-reduct {
+    background-color: var(--dark-color);
+    color: var(--light-color);
     border: var(--border);
     padding: 5px 10px;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
-#button-submit:hover{
+.button-submit-reduct {
+    text-align: center;
+    margin: 5px 0;
+    width: 100%;
+}
+
+#button-submit:hover,
+.button-submit-reduct:hover {
     background-color: var(--light-color);
     color: var(--dark-color);
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
 /**/
 
-.quote{
+.quote {
     padding: 5%;
-    max-height: 500px;
     border: var(--border);
     text-align: center;
 }
@@ -170,63 +189,46 @@ p, label,button, input{
 }
 
 @media screen and (max-width: 1065px) {
-    #image-container img  {
-        max-height: 350px;
+    :root {
+        --max-height: 350px;
     }
-  }
+}
 
-  @media screen and (min-width: 711px) {
-
+@media screen and (min-width: 801px) {
     .button-submit-reduct {
         display: none;
     }
+}
 
-  }
+@media screen and (max-width: 800px) {
+    :root {
+        --body-padding: 2%;
+        --fontsize-content: 10px;
+    }
 
-  @media screen and (max-width: 710px) {
-    body  {
-        padding: 2%;
-    }
-    p, label,button, input{
-        font-family: 'Poppins', sans-serif;
-        font-size: 10px;
-    }
-    .button-submit-reduct {
-        text-align: center;
-        margin: 5px 0;
-        background-color: var(--dark-color);
-        color: var(--light-color);
-        width: 100%;
-    }
-    .button-submit-reduct:hover {
-        background-color: var(--light-color);
-        color: var(--dark-color);
-    }
-    .button-submit-inreduct{
+    .button-submit-inreduct {
         display: none;
     }
-  }
+}
 
-  @media screen and (max-width: 401px) {
-    body  {
-        padding: 1%;
-    }
-    :root{
+@media screen and (max-width: 401px) {
+    :root {
+        --body-padding: 1%;
         --padding: 0;
+        --fontsize-title: 3vmax;
     }
-    h1, h3{
-        font-size: 3vmax;
-    }
-    #selection-container{
+
+    #selection-container {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         align-items: center;
         padding-bottom: 5px;
-        margin-bottom: 2%;
+        margin-bottom: var(--margin-bottom);
         border-bottom: var(--border);
     }
-    #custom-file-button{
-        margin-bottom: 2%;
+
+    #custom-file-button {
+        margin-bottom: var(--margin-bottom);
     }
-  }
+}
