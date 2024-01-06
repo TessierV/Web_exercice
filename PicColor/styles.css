@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:wght@300&family=Poppins:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    background-color: var(--light-color);
+}
+
+:root {
+    --padding: 0 5px;
+    --dark-color: #413E3C;
+    --light-color: #EEEFF4;
+    --border: 1px solid var(--dark-color);
+    --transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    --max-height: 500px;
+
+    --body-padding: 5% 10%;
+    --margin-bottom: 2%;
+
+    --fontsize-title: 5vmax;
+    --fontsize-content: 14px;
+
+    /*Change the format picture for contain instead of cover*/
+    --object-fit: cover;
+}
+
+body {
+    padding: var(--body-padding);
+    color: var(--dark-color);
+}
+
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+
+
+}
+
+h1 {
+    font-size: var(--fontsize-title);
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Corinthia', cursive;
+    font-size: var(--fontsize-title);
+    font-weight: 100;
+}
+
+.separator {
+    height: 5px;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    margin-bottom: var(--margin-bottom);
+}
+
+p,
+label,
+button,
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fontsize-content);
+}
+
+#selection-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    margin-bottom: var(--margin-bottom);
+    border-bottom: var(--border);
+}
+
+#custom-file-button {
+    border: var(--border);
+    padding: 5px 10px;
+    transition: var(--transition);
+}
+
+#custom-file-button:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    transition: var(--transition);
+}
+
+#image-container img {
+    width: calc(100%);
+    max-height: var(--max-height);
+    object-fit: var(--object-fit);
+    margin: 0 auto;
+}
+
+/*control button*/
+
+#color-controls {
+    display: flex;
+    align-items: center;
+}
+
+#color-count {
+    text-align: center;
+}
+
+#increment-button,
+#decrement-button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: var(--fontsize-content);
+    cursor: pointer;
+    border: none;
+}
+
+#control-container {
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+#control-container input {
+    border: none;
+    border-left: var(--border);
+    border-right: var(--border);
+}
+
+#color-count::-webkit-inner-spin-button,
+#color-count::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#button-submit,
+.button-submit-reduct {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: var(--border);
+    padding: 5px 10px;
+    transition: var(--transition);
+}
+
+.button-submit-reduct {
+    text-align: center;
+    margin: 5px 0;
+    width: 100%;
+}
+
+#button-submit:hover,
+.button-submit-reduct:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: var(--transition);
+}
+
+/*Quote*/
+.quote {
+    padding: 5%;
+    border: var(--border);
+    text-align: center;
+}
+
+#color-palette-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/*Color palette*/
+.color-circle {
+    width: calc(100% - 5px);
+    height: 30px;
+    margin-right: 5px;
+}
+
+.color-circle:last-child {
+    margin-right: 0;
+}
+
+.color-circle .color-info {
+    opacity: 0;
+    height: 0;
+    transition: height 0.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.color-circle:hover .color-info {
+    display: block;
+    opacity: 1;
+    height: 20px;
+    transition: height 0.5s ease-in-out, opacity 1.5s ease-in-out;
+    border-bottom: var(--border);
+}
+
+/*footer*/
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 1065px) {
+    :root {
+        --max-height: 350px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .button-submit-reduct {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        --body-padding: 2%;
+        --fontsize-content: 10px;
+    }
+
+    .button-submit-inreduct {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    :root {
+        --body-padding: 1%;
+        --padding: 0;
+        --fontsize-title: 3vmax;
+    }
+
+    #selection-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+        margin-bottom: var(--margin-bottom);
+        border-bottom: var(--border);
+    }
+
+    #custom-file-button {
+        margin-bottom: var(--margin-bottom);
+    }
+}
