@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extraction de Couleurs</title>
+    <title>PicColor</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-
 </head>
 
 <body>
-    <h1>Extract Colors</h1>
+    <h1>PicColor</h1>
     <div class="separator"></div>
     <div id="selection-container">
         <input type="file" id="image-input" accept="image/*" style="display: none;">
@@ -33,92 +33,9 @@
         <div id="color-palette-container"></div>
     </div>
     <button class="button-submit-reduct" id="button-submit" onclick="handleImage()">COLOR Palette »</button>
-    <script>
-        function handleImage() {
-            const fileInput = document.getElementById('image-input');
-            const colorCountInput = document.getElementById('color-count');
-
-            const file = fileInput.files[0];
-            const colorCount = parseInt(colorCountInput.value);
-
-            if (file && colorCount > 0) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    const imageUrl = e.target.result;
-                    displayImage(imageUrl);
-                    extractColors(imageUrl, colorCount);
-                };
-
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function displayImage(imageUrl) {
-            const imageContainer = document.getElementById('image-container');
-            imageContainer.innerHTML = `<img src="${imageUrl}" alt="Uploaded Image" style="object-fit: cover;" >`;
-        }
-
-        function extractColors(imageUrl, colorCount) {
-            const colorThief = new ColorThief();
-            const image = new Image();
-
-            image.onload = function () {
-                const dominantColors = colorThief.getPalette(image, colorCount);
-                const colorPaletteContainer = document.getElementById('color-palette-container');
-                const colorPaletteHeading = document.getElementById('color-palette-heading');
-
-                colorPaletteContainer.innerHTML = '';
-
-                dominantColors.forEach((color, index) => {
-                    const colorCircle = document.createElement('div');
-                    colorCircle.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-                    colorCircle.classList.add('color-circle');
-
-                    const colorInfo = document.createElement('p');
-                    colorInfo.classList.add('color-info');
-                    colorInfo.textContent = rgbToHex(color[0], color[1], color[2]);
-                    colorInfo.style.cursor = 'pointer';
-                    colorInfo.addEventListener('click', () => copyToClipboard(colorInfo.textContent));
-
-                    colorCircle.appendChild(colorInfo);
-                    colorPaletteContainer.appendChild(colorCircle);
-
-                    const colorNumber = rgbToHex(color[0], color[1], color[2]);
-                    console.log(`Couleur ${index + 1}: ${colorNumber}`);
-                });
-                colorPaletteHeading.style.display = 'block';
-            };
-            image.src = imageUrl;
-        }
-
-        function rgbToHex(r, g, b) {
-            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-        }
-
-        function componentToHex(c) {
-            const hex = c.toString(16);
-            return hex.length === 1 ? "0" + hex : hex;
-        }
-
-        function copyToClipboard(text) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            alert('Valeur web de la couleur copiée : ' + text);
-        }
-        function adjustColorCount(amount) {
-            const colorCountInput = document.getElementById('color-count');
-            let currentCount = parseInt(colorCountInput.value);
-            currentCount += amount;
-
-            if (currentCount >= parseInt(colorCountInput.min) && currentCount <= parseInt(colorCountInput.max)) {
-                colorCountInput.value = currentCount;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
+    <footer>
+        <p>made with ♡ by <a href="https://github.com/TessierV"><b>Vanessa</b></a><br></p>
+    </footer>
 </body>
 </html>
