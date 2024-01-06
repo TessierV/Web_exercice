@@ -188,6 +188,18 @@ input {
     border-bottom: var(--border);
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+/*Responsive*/
+
 @media screen and (max-width: 1065px) {
     :root {
         --max-height: 350px;
