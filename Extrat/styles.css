@@ -91,7 +91,7 @@ input {
     margin: 0 auto;
 }
 
-/**/
+/*control button*/
 
 #color-controls {
     display: flex;
@@ -150,8 +150,7 @@ input {
     transition: var(--transition);
 }
 
-/**/
-
+/*Quote*/
 .quote {
     padding: 5%;
     border: var(--border);
@@ -164,6 +163,7 @@ input {
     flex-direction: row;
 }
 
+/*Color palette*/
 .color-circle {
     width: calc(100% - 5px);
     height: 30px;
@@ -188,6 +188,7 @@ input {
     border-bottom: var(--border);
 }
 
+/*footer*/
 footer{
     position: absolute;
     bottom: 0;
