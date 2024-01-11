@@ -1,0 +1,140 @@
+:root {
+    --primary-background: #E6E8EE;
+    --primary-color: #333333;
+    --transition-duration: 0.3s;
+    --header-padding: 2rem 5rem;
+    --hamburger-menu-padding: 2rem;
+    --nav-li-padding: 1rem 0;
+    --nav-li-margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-background);
+}
+
+header {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--header-padding);
+    position: fixed;
+    right: 0;
+    color: var(--primary-color);
+    background-color: var(--primary-background);
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform var(--transition-duration) ease;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-13px, -13px);
+}
+
+.hamburger-menu:hover{
+    opacity: 0.8;
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    text-align: right;
+    padding: 2rem 0;
+}
+
+nav li {
+    cursor: pointer;
+    position: relative;
+    right: 50px;
+    padding: var(--nav-li-padding);
+    margin: var(--nav-li-margin);
+}
+
+nav li a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav li:hover{
+    opacity: 0.8;
+}
+
+nav li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    width: 35px;
+    height: 0.2rem;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+    }
+
+    nav {
+        background-color: var(--primary-background);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    nav li {
+        text-align: center;
+        border-top: 2px solid var(--primary-color);
+        padding: 2rem 0;
+        right: 0;
+        transform: translateX(4rem);
+    }
+
+    nav li::before {
+        display: none;
+    }
+
+    nav li a {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 430px) {
+    header {
+        padding: var(--hamburger-menu-padding);
+    }
+}
