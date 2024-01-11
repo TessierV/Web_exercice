@@ -16,14 +16,11 @@ body {
 
 header {
     display: flex;
-    align-items: end;
     flex-direction: column;
-    justify-content: space-between;
-    padding: var(--header-padding);
-    position: fixed;
     right: 0;
     color: var(--primary-color);
     background-color: var(--primary-background);
+    width: 100%;
 }
 
 .hamburger-menu {
@@ -34,6 +31,25 @@ header {
     justify-content: space-between;
     cursor: pointer;
     transition: transform var(--transition-duration) ease;
+    padding: 0;
+    margin: 0;
+
+}
+
+.site-name {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    padding: var(--header-padding);
+    justify-content: space-between;
+}
+
+.site-name h1 {
+    padding: 0;
+    margin: 0;
+
+
 }
 
 .bar {
@@ -41,10 +57,11 @@ header {
     height: 3px;
     background-color: var(--primary-color);
     transition: transform var(--transition-duration) ease;
+
 }
 
 .hamburger-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-3px, 3px);
+    transform: rotate(-45deg) translate(-5px, 5px);
 }
 
 .hamburger-menu.active .bar:nth-child(2) {
@@ -52,27 +69,29 @@ header {
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-13px, -13px);
+    transform: rotate(45deg) translate(-10px, -10px);
 }
 
-.hamburger-menu:hover{
+.hamburger-menu:hover {
     opacity: 0.8;
 }
 
 nav {
     display: none;
+
 }
 
 nav ul {
     list-style: none;
     text-align: right;
-    padding: 2rem 0;
+    padding: 2rem 5rem;
+    position: absolute;
+    right: 50px;
 }
 
 nav li {
     cursor: pointer;
     position: relative;
-    right: 50px;
     padding: var(--nav-li-padding);
     margin: var(--nav-li-margin);
 }
@@ -82,7 +101,7 @@ nav li a {
     color: var(--primary-color);
 }
 
-nav li:hover{
+nav li:hover {
     opacity: 0.8;
 }
 
@@ -97,16 +116,20 @@ nav li::before {
     transform: translateY(-50%);
 }
 
+
 @media (max-width: 768px) {
     header {
         width: 100%;
     }
 
+    #navList {
+        width: 100%;
+        margin: 0;
+    }
+
     nav {
         background-color: var(--primary-background);
-        position: absolute;
-        top: 60px;
-        left: 0;
+        position: relative;
         width: 100%;
         text-align: center;
     }
@@ -114,14 +137,19 @@ nav li::before {
     nav ul {
         text-align: center;
         padding: 0;
+        width: 100%;
+        right: 0;
     }
 
     nav li {
         text-align: center;
         border-top: 2px solid var(--primary-color);
-        padding: 2rem 0;
-        right: 0;
-        transform: translateX(4rem);
+        background-color: #E6E8EE;
+        padding: 2rem;
+    }
+
+    nav li:last-of-type {
+        border-bottom: 2px solid var(--primary-color);
     }
 
     nav li::before {
@@ -131,10 +159,11 @@ nav li::before {
     nav li a {
         margin-right: 0;
     }
-}
+    nav li:hover {
+        opacity: 1;
+    }
 
-@media (max-width: 430px) {
-    header {
-        padding: var(--hamburger-menu-padding);
+    nav li a:hover {
+        opacity: 0.8;
     }
 }
