@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>T1 Website</title>
+</head>
+
+<body>
+    <header>
+        <div class="site-name">
+            <h1>T1 Website</h1>
+            <div class="hamburger-menu" onclick="toggleNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <nav>
+            <ul id="navList"></ul>
+        </nav>
+    </header>
+    <section class="row-section welcome">
+        <div class="left-column l-w">
+            <img src="./asset/pexels-eunhyuk-ahn-2894292.jpg" alt="Description de l'image">
+        </div>
+        <div class="right-column r-w">
+            <h2>Titre de Lorem 5</h2>
+            <p>Texte de Lorem 20. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+            <button>Button Lorem2</button>
+        </div>
+    </section>
+    <section class="row-section about">
+        <div class="left-column l-a">
+            <h2>Titre de Lorem 5</h2>
+            <p>Texte de Lorem 20. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+            <button>Button Lorem2</button>
+        </div>
+        <div class="right-column r-a">
+            <div class="s-selector">
+                <img src="./asset/pexels-eunhyuk-ahn-2894292.jpg" alt="image">
+                <span class="s-s-span" data-tooltip="Lorem 1"></span>
+                <span class="s-s-span" data-tooltip="Lorem ipsum dolor 2"></span>
+                <span class="s-s-span" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit 3"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="row-section grid">
+        <div class="left-column l-g">
+            <div class="row_g_o">
+                <h2>Titre de Lorem 5</h2>
+                <p>Texte de Lorem 20. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+                <button>Button Lorem2</button>
+            </div>
+
+            <div class="row_g_e">
+                <h2>Titre de Lorem 5</h2>
+                <p>Texte de Lorem 20. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+                <button>Button Lorem2</button>
+            </div>
+        </div>
+        <div class="right-column r-g">
+            <div class="r-g_column_g_o">
+                <div class="r-g_row_g_o">
+                    <h2>Titre de Lorem 5</h2>
+                </div>
+                <div class="r-g_row_g_e">
+                    <img src="./asset/pexels-eunhyuk-ahn-2894292.jpg" alt="image">
+
+                </div>
+            </div>
+            <div class="r-g_r_column_g_o">
+                <div class="r-g_r_row_g_o">
+                    <h2>Titre de Lorem 5</h2>
+                </div>
+
+                <div class="r-g_r_row_g_e">
+                    <h2>Titre de Lorem 5</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
