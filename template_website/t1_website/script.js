@@ -22,10 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var navItems = [
             { text: 'Home', href: '#' },
             { text: 'About', href: '#about' },
-            { text: 'Services', href: '#services' },
             { text: 'Work', href: '#work' },
-            { text: 'Directory', href: '#directory' },
-            { text: 'Contact', href: '#contact' }
         ];
 
         navItems.forEach(function (item) {
@@ -60,3 +57,42 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', updateButtonsPosition);
     updateButtonsPosition();
 });
+
+
+/* project */
+const projects = [
+    {
+        title: "Project1",
+        img: "./asset/pexels-eunhyuk-ahn-2894292.jpg",
+        descriptif: "Lorem 30"
+    },
+    {
+        title: "Project1",
+        img: "./asset/pexels-eunhyuk-ahn-2894292.jpg",
+        descriptif: "Lorem 30"
+    },
+    {
+        title: "Lorem",
+        img: "./asset/pexels-eunhyuk-ahn-2907021.jpg",
+        descriptif: "Lorem 10"
+    },
+    {
+        title: "Project3",
+        img: "./asset/pexels-eunhyuk-ahn-2907034.jpg",
+        descriptif: "Lorem 100"
+    }
+];
+
+function showProject(projectNumber) {
+    // Réinitialiser toutes les classes "selected-project"
+    const allProjects = document.querySelectorAll('.r-g_row_g_o, .r-g_row_g_e, .r-g_r_row_g_o, .r-g_r_row_g_e');
+    allProjects.forEach(project => {
+        project.classList.remove('selected-project');
+    });
+
+    const descriptionElement = document.querySelector('.left-column .row_g_e p');
+    descriptionElement.innerText = projects[projectNumber].descriptif;
+
+    const rightColumnImageElement = document.querySelector('.r-g_row_g_e h3');
+    rightColumnImageElement.innerHTML = `<img src="${projects[projectNumber].img}" alt="image">`;
+}
