@@ -67,11 +67,6 @@ const projects = [
         descriptif: "Lorem 30"
     },
     {
-        title: "Project1",
-        img: "./asset/pexels-eunhyuk-ahn-2894292.jpg",
-        descriptif: "Lorem 30"
-    },
-    {
         title: "Lorem",
         img: "./asset/pexels-eunhyuk-ahn-2907021.jpg",
         descriptif: "Lorem 10"
@@ -84,7 +79,6 @@ const projects = [
 ];
 
 function showProject(projectNumber) {
-    // Réinitialiser toutes les classes "selected-project"
     const allProjects = document.querySelectorAll('.r-g_row_g_o, .r-g_row_g_e, .r-g_r_row_g_o, .r-g_r_row_g_e');
     allProjects.forEach(project => {
         project.classList.remove('selected-project');
