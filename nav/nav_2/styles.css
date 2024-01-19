@@ -1,0 +1,89 @@
+:root {
+    --color1: #333;
+    --color2: #fff;
+    /*add the opacity for smooth the effect of the display can be remove for look more as the exemple*/
+    --transition:  opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    --gap: 0.5rem;
+    --border-radius: 50%;
+
+    /*row-verse for horizontal right nav | row for horizontal left nav | column for vertical nav*/
+    --nav-direction: column;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  .menu {
+    position: fixed;
+    top: 1rem;
+    /*left : 1rem if prefence to left*/
+    left: 1rem;
+    display: flex;
+    flex-direction: var(--nav-direction);
+    align-items: center;
+    gap: var(--gap);
+  }
+
+  .menu-open {
+    display: none;
+  }
+
+  .menu-open-button {
+    cursor: pointer;
+    background-color: var(--color1);
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, scale 0.3s ease-in-out;
+  }
+
+  .menu-open-button:hover{
+    scale: 1.1;
+  }
+
+  /*hamburger*/
+  .menu-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--color2);
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open:checked + .menu-open-button .menu-line-1 {
+    transform: rotate(-45deg) translate(-6px, 7px);
+  }
+
+  .menu-open:checked + .menu-open-button .menu-line-2 {
+    opacity: 0;
+  }
+
+  .menu-open:checked + .menu-open-button .menu-line-3 {
+    transform: rotate(45deg) translate(-6px, -7px);
+  }
+
+  /*menu-item section*/
+  .menu-item {
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color2);
+    margin-top: 10px;
+    font-size: x-large;
+    background-color: var(--color1);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color1);
+    transition: var(--transition);
+  }
+
+  .menu-item:hover{
+    background-color: var(--color2);
+    color: var(--color1);
+  }
+
+  .menu-open:checked ~ .menu-item {
+    opacity: 1;
+  }
