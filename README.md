@@ -25,8 +25,8 @@ ColorPalette Extractor is a web-based tool that allows users to upload an image 
 
 
 ## Nav:
--nav_1: minimal header  
--nav_2: rond header
+This repository contains customizable navigation bars (navbars) implemented in HTML and CSS. The aim is to provide easy-to-use and stylish navigation options for your web projects. Each navbar is designed to be highly customizable to suit various design preferences. Feel free to explore and integrate these navbars into your projects. Make them your own by adjusting colors, styles, and structure according to your requirements.
+
 
 ## template_website:
--site1:
+This parent directory serves as an overview for a collection of template_website folders, each containing a unique website template. These templates are designed to offer a starting point for various web projects, providing a foundation with pre-built structures and styles.
