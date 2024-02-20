@@ -1,4 +1,4 @@
-## T1_Website :
+![image](https://github.com/TessierV/Web_exercice/assets/113889290/af59a39a-e6cd-4e7b-a1aa-ee22410db519)
 
 ## Table of Contents:
 Introduction
@@ -15,6 +15,8 @@ Clean and minimalist design
 Responsive layout for seamless viewing on various devices
 Intuitive navigation for a user-friendly experience
 A carefully curated gallery to highlight featured work
+
+![Capture web_20-2-2024_103123_127 0 0 1](https://github.com/TessierV/Web_exercice/assets/113889290/ea96d5a1-94ee-4dac-a8fd-5f1fb14bdf4b)
 
 ## Installation
 
