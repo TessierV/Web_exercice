@@ -1,13 +1,16 @@
 /* Nav */
 document.addEventListener('DOMContentLoaded', function () {
+    // Selecting DOM elements
     var hamburgerMenu = document.querySelector('.hamburger-menu');
     var nav = document.querySelector('nav');
 
+    // Handling click on the hamburger menu
     hamburgerMenu.addEventListener('click', function () {
         this.classList.toggle('active');
         toggleNav();
     });
 
+    // Function to toggle the visibility of the navigation
     function toggleNav() {
         var navStyle = window.getComputedStyle(nav);
 
@@ -17,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.style.display = 'none';
         }
     }
+
+    // Function to create the navigation list
     function createNavList() {
         var navList = document.getElementById('navList');
         var navItems = [
@@ -38,9 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Selecting DOM elements
     const mainImage = document.getElementById('mainImage');
     const buttons = document.querySelectorAll('.button');
 
+    // Function to update buttons' positions relative to the main image
     function updateButtonsPosition() {
         buttons.forEach(button => {
             const rect = mainImage.getBoundingClientRect();
@@ -54,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Updating buttons' positions on window resize
     window.addEventListener('resize', updateButtonsPosition);
     updateButtonsPosition();
 });
@@ -78,6 +86,7 @@ const projects = [
     }
 ];
 
+// Function to show the details of a selected project
 function showProject(projectNumber) {
     const allProjects = document.querySelectorAll('.r-g_row_g_o, .r-g_row_g_e, .r-g_r_row_g_o, .r-g_r_row_g_e');
     allProjects.forEach(project => {
@@ -98,6 +107,4 @@ function showProject(projectNumber) {
 
     const titleElement2 = document.querySelector('.r-g_r_row_g_e h3');
     titleElement2.innerText = projects[2].title;
-
-
 }
