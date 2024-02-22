@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 
-    <title>Your Website</title>
+    <title>t2_website</title>
     <style>
         @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-straight/css/uicons-thin-straight.css');
         @import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:wght@300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300&family=Rajdhani:wght@300;400;500;600;700&display=swap');
@@ -26,8 +26,6 @@
             font-style: normal;
             letter-spacing: -0.35rem;
         }
-
-
         h2,
         nav {
             font-family: "Rajdhani", sans-serif;
@@ -36,7 +34,6 @@
             font-size: medium;
             text-transform: uppercase;
         }
-
         h3 {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
@@ -46,7 +43,6 @@
             font-size: x-large;
             text-transform: uppercase;
         }
-
         p {
             font-size: large;
         }
@@ -56,7 +52,7 @@
 <body style="background-color: #F4F2F1">
     <header class="flex justify-between items-center py-4 flex-col sm:flex-row border-b border-black mx-4 ">
         <div class="flex items-center flex-shrink-0">
-            <p class="text-xl">Lorem</p>
+            <h2 class="text-xl">Lorem</h2>
         </div>
         <div class="flex items-center flex-col sm:flex-row ">
             <nav class="flex items-center sm:border-r border-black pr-4">
@@ -68,20 +64,21 @@
                 <a href="#">Contact</a>
             </nav>
             <div class="pl-4 ">
-                <button class="bg-blue-500 rounded-full w-10 h-10 focus:outline-none">B1</button>
-                <button class="bg-green-500 rounded-full w-10 h-10 focus:outline-none">B2</button>
+                <button class="border border-black rounded-full w-8 h-8 focus:outline-none">B1</button>
+                <button class="border border-black rounded-full w-8 h-8 focus:outline-none">B2</button>
             </div>
         </div>
     </header>
     <section id="welcome" class="flex flex-col sm:flex-row justify-between py-8 mx-4 border-b border-black sm:gap-x-4">
         <div class="sm:w-2/5  flex flex-col sm:justify-between">
-            <div class="w-1/2">
-                <h1 class="text-7xl font-semibold mb-4">Lorem ipsum dolor sit amet consectetur</h1>
+            <div class="w-2/3">
+                <h1 class="text-5xl uppercase font-semibold mb-4">Lorem ipsum dolor sit amet consectetur</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur inventore commodi illum nobis
                     odit nihil assumenda earum voluptatem. Ratione, delectus?</p>
             </div>
             <div>
-                <button class="sm:mb-0 bg-black text-white w-1/3 py-2 rounded">Lorem »</button>
+                <button class="sm:mb-0 bg-black text-white w-1/3 my-4 py-2 rounded">Lorem »</button>
+
             </div>
         </div>
         <div class="sm:w-3/5">
@@ -117,8 +114,8 @@
         </div>
         <div id="picture" class="border-l border-black sm:w-2/3 overflow-x-hidden mr-8">
             <div class="flex gap-x-11">
-                <img src="./asset/logo/1.png" style="width: 10%;" alt="logo" />
-                <img src="./asset/logo/2.png" style="width: 10%;" alt="logo" />
+                <img id="logo" src="./asset/logo/1.png" style="width: 10%;" alt="logo" />
+                <img id="logo" src="./asset/logo/2.png" style="width: 10%;" alt="logo" />
                 <img src="./asset/logo/3.png" style="width: 10%;" alt="logo" />
                 <img src="./asset/logo/4.png" style="width: 10%;" alt="logo" />
                 <img src="./asset/logo/5.png" style="width: 10%;" alt="logo" />
@@ -185,13 +182,20 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, totam!</p>
                 </div>
             </div>
-
         </div>
     </section>
-    <section id="work" x-data="{ selectedImage: './asset/1.png', title: 'Lorem ipsum dolor', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, totam!' }"
+    <section id="work"
+        x-data="{ selectedImage: './asset/1.png', title: 'Lorem ipsum dolor', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, totam!' }"
         class="flex flex-col sm:flex-row justify-between border-b border-black mx-4">
+        <style>
+            #work_projet:hover img{
+                scale: 1.1;
+                transition: scale ease-in 0.5s;
+
+            }
+        </style>
         <div class="sm:w-1/3  flex flex-col sm:justify-between order-r border-black my-4">
-            <div>
+            <div class="w-2/3">
                 <h3 class="text-l font-semibold uppercase">Featured Work</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, totam!</p>
             </div>
@@ -200,7 +204,7 @@
         </div>
 
         <div class="sm:w-2/3 flex flex-col border-l border-black my-4 ">
-            <div class="p-10 w-1/2 flex flex-row gap-x-6">
+            <div class="p-10 flex flex-row gap-x-6">
                 <div class="flex flex-col w-1/2">
                     <img x-bind:src="selectedImage" class="rounded " alt="Selected Image" />
                     <div class="flex py-4">
@@ -211,48 +215,51 @@
                     <p x-text="description"></p>
                 </div>
             </div>
-
             <div class="border-t border-black mx-4"></div>
-
             <div class="sm:w-full flex flex-col sm:flex-row">
-                <div class="sm:w-1/4 p-4" x-on:click="selectedImage = './asset/1.png'; title = 'Lorem ipsum dolor'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis';">
+                <div id="work_projet" class="sm:w-1/4 p-4"
+                    x-on:click="selectedImage = './asset/1.png'; title = 'Lorem ipsum dolor'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis';">
                     <img src="./asset/1.png" class="rounded w-full" alt="Thumbnail 1" />
                     <div class="flex justify-between pt-4">
                         <h2>Lorem ipsum dolor</h2>
-                        <h2>Lorem</h2>
+                        <h2>#1</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur!</p>
                 </div>
-                <div class="sm:w-1/4 p-4" x-on:click="selectedImage = './asset/2.png'; title = 'Lorem ipsum2'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis.';">
+                <div id="work_projet" class="sm:w-1/4 p-4"
+                    x-on:click="selectedImage = './asset/2.png'; title = 'Lorem ipsum2'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis.';">
                     <img src="./asset/2.png" class="rounded w-full" alt="Thumbnail 2" />
                     <div class="flex justify-between pt-4">
                         <h2>Lorem ipsum2</h2>
-                        <h2>Lorem</h2>
+                        <h2>#2</h2>
                     </div>
                     <p>Lorem ipsum dolor sit</p>
                 </div>
-                <div class="sm:w-1/4 p-4" x-on:click="selectedImage = './asset/3.png'; ; title = 'Lorem3'; description = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi quaerat, odio voluptas autem laborum asperiores sapiente modi aliquid, in numquam temporibus officiis error vitae consequatur cum voluptate tempore enim omnis?';">
+                <div id="work_projet" class="sm:w-1/4 p-4"
+                    x-on:click="selectedImage = './asset/3.png'; ; title = 'Lorem3'; description = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi quaerat, odio voluptas autem laborum asperiores sapiente modi aliquid, in numquam temporibus officiis error vitae consequatur cum voluptate tempore enim omnis?';">
                     <img src="./asset/3.png" class="rounded w-full" alt="Thumbnail 3" />
                     <div class="flex justify-between pt-4">
                         <h2>Lorem3</h2>
-                        <h2>Lorem</h2>
+                        <h2>#3</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet</p>
                 </div>
 
-                <div class="sm:w-1/4 p-4" x-on:click="selectedImage = './asset/4.png'; ; title = 'Lorem ipsum  4'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis. Velit at dolores ex. Suscipit dignissimos fugit ullam id voluptate fugiat voluptates ex?';">
+                <div id="work_projet" class="sm:w-1/4 p-4"
+                    x-on:click="selectedImage = './asset/4.png'; ; title = 'Lorem ipsum  4'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis. Velit at dolores ex. Suscipit dignissimos fugit ullam id voluptate fugiat voluptates ex?';">
                     <img src="./asset/4.png" class="rounded w-full" alt="Thumbnail 4" />
                     <div class="flex justify-between pt-4">
-                        <h2>Lorem ipsum  4</h2>
-                        <h2>Lorem</h2>
+                        <h2>Lorem ipsum 4</h2>
+                        <h2>#4</h2>
                     </div>
                     <p>Lorem ipsum dolor</p>
                 </div>
-                <div class="sm:w-1/4 p-4" x-on:click="selectedImage = './asset/5.png'; ; title = 'Lorem ipsum dolor 5'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis.';">
+                <div id="work_projet" class="sm:w-1/4 p-4"
+                    x-on:click="selectedImage = './asset/5.png'; ; title = 'Lorem ipsum dolor 5'; description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi doloremque ullam ex quisquam quibusdam sunt obcaecati quidem numquam autem ipsa, dignissimos totam, perspiciatis explicabo consectetur sequi error recusandae voluptatem non, placeat impedit qui magni nobis.';">
                     <img src="./asset/5.png" class="rounded w-full" alt="Thumbnail 5" />
                     <div class="flex justify-between pt-4">
                         <h2>Lorem ipsum dolor 5</h2>
-                        <h2>Lorem</h2>
+                        <h2>#5</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
@@ -270,19 +277,19 @@
             <div class="flex py-4 gap-x-4 ">
                 <div>
                     <img class="rounded" src="./asset/young_women.png" class="h-30" alt="logo" />
-                    <h2>Lorem</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem</p>
                 </div>
 
                 <div>
                     <img class="rounded" src="./asset/man.png" class="h-30" alt="logo" />
-                    <h2>Lorem</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem</p>
                 </div>
                 <div>
                     <img class="rounded" src="./asset/young_woman2.png" class="h-30" alt="logo" />
-                    <h2>Lorem</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem</p>
                 </div>
             </div>
         </div>
@@ -290,18 +297,21 @@
 
     <section class="flex">
         <div class="sm:w-1/3 py-4 border-r border-black mx-4 my-4">
-            <h3 class="text-l font-semibold uppercase">Common Question</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui explicabo modi temporibus amet quae
-                animi nobis laborum a corrupti!</p>
+            <div class="w-2/3">
+                <h3 class="text-l font-semibold uppercase">Featured Work</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam qui explicabo modi temporibus amet quae
+                    animi nobis laborum a corrupti!</p>
+            </div>
         </div>
         <div x-data="{ openTab: null }" class="w-2/3 p-4">
             <div>
                 <div id="question" @click="openTab !== 1 ? openTab = 1 : openTab = null"
                     class="cursor-pointer	border-black border-b px-4 py-6 my-2 flex justify-between items-center transition-all duration-300">
                     <div class="p-4">
-                        <h2>Lorem</h2>
-                        <p x-show="openTab === 1" style="height: auto; overflow: hidden;">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Nobis, voluptas.</p>
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p x-show="openTab === 1" style="height: auto; overflow: hidden;">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Cupiditate numquam voluptatem, officia odit laboriosam
+                            sapiente dicta qui animi molestiae esse?</p>
                     </div>
                     <i x-bind:class="{ 'rotate-90': openTab === 1 }"
                         class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
@@ -309,9 +319,10 @@
                 <div id="question" @click="openTab !== 2 ? openTab = 2 : openTab = null"
                     class="cursor-pointer	 border-black border-b px-4 py-6 my-2 flex justify-between items-center transition-all duration-300">
                     <div class="p-4">
-                        <h2>Lorem</h2>
-                        <p x-show="openTab === 2" style="height: auto; overflow: hidden;">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Nobis, voluptas.</p>
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p x-show="openTab === 2" style="height: auto; overflow: hidden;">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Commodi laborum placeat nihil vitae modi voluptatum illo vero,
+                            debitis tempora voluptatem quibusdam tenetur? Quae a ea esse explicabo quo, sequi amet.</p>
                     </div>
                     <i x-bind:class="{ 'rotate-90': openTab === 2 }"
                         class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
@@ -319,9 +330,12 @@
                 <div id="question" @click="openTab !== 3 ? openTab = 3 : openTab = null"
                     class="cursor-pointer	border-black border-b px-4 py-6 my-2 flex justify-between items-center transition-all duration-300">
                     <div class="p-4">
-                        <h2>Lorem</h2>
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ipsum tenetur ex
+                            voluptatem?</h2>
                         <p x-show="openTab === 3" style="height: auto; overflow: hidden;">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Nobis, voluptas.</p>
+                            consectetur adipisicing elit. Accusamus nulla veniam inventore. Odit eum animi deleniti
+                            molestiae suscipit quidem maxime porro quibusdam. Quasi aperiam ab consequatur impedit,
+                            aspernatur deleniti odit?</p>
                     </div>
                     <i x-bind:class="{ 'rotate-90': openTab === 3 }"
                         class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
@@ -329,9 +343,10 @@
                 <div id="question" @click="openTab !== 4 ? openTab = 4 : openTab = null"
                     class="cursor-pointer px-4 py-6 my-2 flex justify-between items-center transition-all duration-300">
                     <div class="p-4">
-                        <h2>Lorem</h2>
+                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis?</h2>
                         <p x-show="openTab === 4" style="height: auto; overflow: hidden;">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Nobis, voluptas.</p>
+                            consectetur adipisicing elit. Nobis, voluptas. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Officiis, vero.</p>
                     </div>
                     <i x-bind:class="{ 'rotate-90': openTab === 4 }"
                         class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
@@ -389,9 +404,10 @@
     </footer>
     <div class="flex py-10 my-4 px-4 justify-between">
         <h2>@Lorem ipsum</h2>
-        <div class="flex flex-row gap-x-4">
-            <h2>Lorem ipsum</h2>
-            <h2>Lorem ipsum</h2>
+        <div class="flex flex-row gap-x-1">
+            <i class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
+            <i class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
+            <i class="fi fi-ts-caret-circle-down text-3xl transform p-4 transition-all duration-300"></i>
         </div>
     </div>
 </body>
