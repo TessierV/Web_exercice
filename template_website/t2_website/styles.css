@@ -1,0 +1,62 @@
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-straight/css/uicons-thin-straight.css');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:wght@300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.35rem;
+}
+
+h2,
+nav {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#ourclient img,
+#team {
+    animation: scrollAnimation 10s linear infinite;
+}
+
+#work_projet:hover img {
+    scale: 1.1;
+    transition: scale ease-in 0.5s;
+}
+
+#question:hover h2 {
+    font-weight: bolder;
+    transition: font-weight 0.5s ease-in-out;
+}
+
+#question:hover i {
+    scale: 1.1;
+    transition: scale 0.5s ease-in-out;
+}
