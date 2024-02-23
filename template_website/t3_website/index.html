@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>t3_website</title>
+    <style>
+        :root {
+            --box-curve: 20px;
+            --box-bg: #ffffff;
+        }
+
+        .box__corner {
+            width: var(--box-curve);
+            height: var(--box-curve);
+            fill: transparent;
+        }
+
+        @supports (--var: transparent) {
+            .box__corner {
+                display: block;
+                align-self: flex-end;
+                fill: var(--box-bg);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #ffffff">
+    <header class="flex justify-between items-center py-4 flex-col sm:flex-row border-b border-black mx-4">
+        <div class="flex items-center flex-shrink-0">
+            <h2 class="text-xl">Lorem</h2>
+        </div>
+        <div class="flex items-center flex-col sm:flex-row">
+            <nav class="flex items-center font-normal pb-2 sm:pb-0 sm:gap-4 gap-2">
+                <a href="#" class="text-xs sm:text-base">Home</a>
+                <a href="#" class="text-xs sm:text-base">Services</a>
+                <a href="#" class="text-xs sm:text-base">Work</a>
+                <a href="#" class="text-xs sm:text-base">Client</a>
+                <a href="#" class="text-xs sm:text-base">Question</a>
+            </nav>
+        </div>
+    </header>
+    <section class="flex gap-6 m-4">
+        <div class="sm:w-2/3 flex flex relative ">
+            <img src="./asset/1.png" class="w-full rounded-xl" alt="Young Women" />
+            <div class="absolute bottom-0 left-0">
+                <svg class="box__corner" width="20" height="20" viewBox="0 0 80 80" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g fill-rule="evenodd">
+                        <path d="M60,80 L0,80 L0,0 C0,44.18278 35.81722,80 80,80 Z"></path>
+                    </g>
+                </svg>
+                <div>
+                    <div class="flex">
+                        <h3 class="text-2xl inline-block relative bg-white rounded-tr-xl font-medium px-8 py-3">
+                            Lorem, ipsum dolor.
+
+                        </h3>
+                        <svg class="box__corner" width="20" height="20" viewBox="0 0 80 80" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g fill-rule="evenodd">
+                                <path d="M60,80 L0,80 L0,0 C0,44.18278 35.81722,80 80,80 Z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="flex">
+                        <p class="bg-white rounded-tr-xl px-8 py-3">Lorem ipsum dolor sit amet consectetur
+                            adipisicing.
+
+                        </p>
+                        <svg class="box__corner" width="20" height="20" viewBox="0 0 80 80" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g fill-rule="evenodd">
+                                <path d="M60,80 L0,80 L0,0 C0,44.18278 35.81722,80 80,80 Z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sm:w-1/3 sm:mb-4 font-medium">
+            <div style="background-color: #EDE9E4;" class="h-1/2 rounded-xl sm:mb-5 flex flex-col justify-evenly px-6">
+
+                <div class="mb-4">
+                    <button class="border-black rounded-2xl border px-5 py-1">
+                        <p>lorem</p>
+                    </button>
+                </div>
+                <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, alias!</p>
+                <h3 class="mb-4">Lorem, ipsum.</h3>
+                <div class="flex">
+                    <div class="absolute right-14 p-2 bg-white rounded-t-full">
+                        <button class="rounded-full bg-black w-10	h-10">
+                            <p class="text-2xl text-white">+</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" h-1/2 text-white rounded-xl sm:mb-5 flex flex-col justify-evenly px-6 relative"
+                style="background-image: url('./asset/21.png'); background-size: cover; background-position: center;">
+                <div class="mb-4">
+                    <button class="border-white rounded-2xl border px-5 py-1">
+                        <p>lorem</p>
+                    </button>
+                </div>
+                <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, alias!</p>
+                <h3 class="mb-4">Lorem, ipsum.</h3>
+                <div class="flex">
+                    <div class="absolute right-14 p-2 bg-white rounded-t-full">
+                        <button class="rounded-full bg-black w-10	h-10">
+                            <p class="text-2xl">+</p>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+
+</html>
