@@ -6,8 +6,14 @@ This parent directory serves as an overview for a collection of template_website
 # t1_website
 Website JS / HTML /CSS
 
+![Capture web_20-2-2024_103123_127 0 0 1](https://github.com/TessierV/Web_exercice/assets/113889290/bf34b74d-036c-4b31-9b81-a274f83e9a41)
+
+
 # t2_website
 Website HMTML / Tailwind
+
+![Capture web_23-2-2024_11326_127 0 0 1](https://github.com/TessierV/Web_exercice/assets/113889290/2e634454-ac21-4a0e-8485-407dda0238b3)
+
 
 <br/><hr>
 <p align="right">by TessierV</p>
