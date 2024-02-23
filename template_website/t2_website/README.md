@@ -1,4 +1,4 @@
-![image](https://github.com/TessierV/Web_exercice/assets/113889290/af59a39a-e6cd-4e7b-a1aa-ee22410db519)
+![image](https://github.com/TessierV/Web_exercice/assets/113889290/dffd79f7-b5cc-4f9b-9293-e547e2d77e8b)
 
 ## Table of Contents:
 Introduction
@@ -16,6 +16,7 @@ Responsive layout for seamless viewing on various devices
 Intuitive navigation for a user-friendly experience
 A carefully curated gallery to highlight featured work
 
+![Capture web_23-2-2024_11326_127 0 0 1](https://github.com/TessierV/Web_exercice/assets/113889290/782f3e34-0ebc-40e5-a6f4-9853ebdef934)
 
 
 ## Installation
