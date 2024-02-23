@@ -194,7 +194,6 @@ nav li::before {
     flex-direction: column;
     align-items: first baseline;
     padding: 7%;
-
 }
 
 /*img selector*/
